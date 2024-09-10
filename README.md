@@ -1,2 +1,2 @@
-# Codespace-Bootcamp-2024
-Edinburgh College - Codespace Bootcamp 
+# Edinburgh College - Introductory Codespace Course 2024
+
