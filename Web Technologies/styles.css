@@ -1,0 +1,27 @@
+body {
+    padding: 15px;
+}
+
+h2, h3 {
+    text-decoration: underline;
+    border-radius: 18px;
+    background-color: rgba(245, 190, 59, 0.7);
+    padding: 10px;
+    width: 70%;
+}
+
+#answers, p {
+    margin-left: 15px;   
+}
+
+table {
+    border-spacing: 30px;
+    text-align: centre; 
+    width: 25%;
+        
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
