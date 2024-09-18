@@ -1,0 +1,51 @@
+body {
+    padding: 35px;
+    
+}
+
+h1 {
+    padding-left: 10px;
+}
+
+h2 {
+    text-decoration: underline;
+    border-radius: 18px;
+    background-color: rgba(245, 190, 59, 0.7);
+    padding: 10px;
+}
+
+h3 {
+    text-decoration: underline;
+    border-radius: 18px;
+    width: 90%;
+    background-color: rgba(245, 190, 59, 0.7);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#answers {
+    margin-left: 15px;  
+    width: 90%
+}
+
+pre {
+    background-color: #E2DFD2;
+    width: 90%;
+}
+
+#q1, #q2, #q3, #q4, #q5, #q6 {
+    background-color: #E2DFD2;
+    padding: 15px;
+    width: 90%;
+}
+
+table {
+    border-spacing: 30px;
+    text-align: centre; 
+    width: 25%;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
