@@ -3,7 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=#, inital-scale=1.0">
-        <title>Web Technologies - Challenge 1 - PHP Scripts</title>
+        <title>Web Technologies - Challenge 1 -PHP Scripts</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="styles.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,16 +17,25 @@
         </style>
     </head>
     <body>
-    <div class="container" style="width: 70%;">
+    <div class="container">
         <img src="csLogo.png" style="float: left;">
         <img src="ecLogo.png" style="float: right; margin-top: 3%;">
         <br>
-        <h1 style="text-align: center;">Codespace Bootcamp</h1>
+        <h1 style="text-align: center;"><b>Codespace Bootcamp</b></h1>
     </div>
     <br>
-    <h1>Web Technologies</h1>
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <h1>Web Technologies</h1>
+        </div>
+        <div class="col-sm-4">
+            <h5 style="text-align: right; width: 95%">Sarah Beaton<br>EC1937236</h5>
+        </div>
+    </div>
+    <br>
     <h2>Challenge 1 - PHP Scripts</h2>
-    <p>In the following challenges, you will improve your scripting skills by writing solutions for the tasks.</p>
+    <p id="answers">In the following challenges, you will improve your scripting skills by writing solutions for the tasks.</p>
     <br>
     <h3>Challenge 1-1</h3>
     <!-- First, create two variables called $width and $height, and assign them the respective values of 10 and 5.
@@ -31,6 +43,17 @@
     Finally, print out a string that includes the value of $width, $height, and $area in a sentence.
     -->
     <div id="answers">
+        <pre>   
+            <code>
+                $width = 10;
+                $height = 5;
+                $area = $width * $height;
+                
+                echo "The rectangle has a width of $width meters, a height of $height meters and an area of $area square meters.";
+            
+            </code>
+        </pre>
+        <p>Output:</p>
         <?php
             $width = 10;
             $height = 5;
@@ -47,6 +70,34 @@
     dividing them. The program should also concatenate the two numbers into a string.
     -->
     <div id="answers">
+        <pre>
+            <code>
+                $num1 = 10;
+                $num2 = 5;
+
+                //Addition
+                $addit = $num1 + $num2;
+                echo "Addition of $num1 and $num2 is $addit.&lt;br>";
+
+                //Subtraction
+                $subtr = $num1 - $num2;
+                echo "Subraction of $num1 and $num2 is $subtr.&lt;br>";
+
+                //Multiplication
+                $multi = $num1 * $num2;
+                echo "Multiplication of $num1 and $num2 is $multi.&lt;br>";
+
+                //Division 
+                $divis = $num1 / $num2;
+                echo "Division of $num1 and $num2 is $divis.&lt;br>";
+
+                //Concatenate
+                $string = $num1 . $num2;
+                
+                echo "Concatenation of $num1 and $num2 is $string.";
+            </code>
+        </pre>
+        <p>Output:</p>
         <?php
             $num1 = 10;
             $num2 = 5;
@@ -79,6 +130,22 @@
     Create a program that uses variables to store the user's age and the number of days, hours, and minutes they have been alive.
     -->
     <div id="answers">
+        <pre>
+            <code>
+                $age = 28;
+                $days = $age * 365;
+                $hours = $age * 8760;
+                $minutes = $age * 525600;
+
+                echo "Welcome to the Age Calculator!&lt;br>&lt;br>
+                Your age: 28&lt;br>&lt;br>
+                You have been alive for:&lt;br>
+                $days days&lt;br>
+                $hours hours&lt;br>
+                $minutes minutes";
+            </code>
+        </pre>
+        <p>Output:</p>
         <?php
             $age = 28;
             $days = $age * 365;
@@ -107,6 +174,15 @@
     Sunday
     -->
     <div id="answers">
+        <pre>
+            <code>
+                $daysOfTheWeek = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
+                foreach ($daysOfTheWeek as $day) {
+                    &nbsp;echo "&lt;li>$day&lt;/li>";
+                }
+            </code>
+        </pre>
+        <p>Output:</p>
         <?php 
             $daysOfTheWeek = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday");
             foreach ($daysOfTheWeek as $day) {
@@ -123,6 +199,32 @@
     average highs are 66°F (19°C). The coldest months of the year are January and February, with average lows of 33.8°F (1°C) and highs 
     that rarely exceed 44.6°F (7°C).-->
     <div id="answers">
+        <pre>
+            <code>
+                $julyAugust = array("low" => "11°C", "high" => "19°C");
+                $januaryFebruary = array("low" => "1°C", "high" => "7°C");
+
+                echo "&lt;h4>Average Temperatures in Edinburgh&lt;/h4>
+                &lt;table>
+                    &lt;tr>
+                        &lt;th>Months&lt;/th>
+                        &lt;th>Low&lt;/th>
+                        &lt;th>High&lt;/th>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>July - August&lt;/td>
+                        &lt;td>{$julyAugust["low"]}&lt;/td>
+                        &lt;td>{$julyAugust["high"]}&lt;/td>
+                    &lt;/tr>
+                    &lt;tr>
+                        &lt;td>January - February&lt;/td>
+                        &lt;td>{$januaryFebruary["low"]}&lt;/td>
+                        &lt;td>{$januaryFebruary["high"]}&lt;/td>
+                    &lt;/tr>
+                &lt;/table>"
+            </code>
+        </pre>
+        <p>Output:</p>
         <?php 
             $julyAugust = array("low" => "11°C", "high" => "19°C");
             $januaryFebruary = array("low" => "1°C", "high" => "7°C");
@@ -159,10 +261,50 @@
     3.  Print to screen Jamie's English results.
     4.  Print to screen Harry's Maths results.-->
     <div id="answers">
+        <pre>
+            <code>
+            $aarron = array("physics" => 74, "english" => 69, "maths" => 70);
+            $jamie = array("physics" => 64, "english" => 79, "maths" => 69);
+            $harry = array("physics" => 55, "english" => 52, "maths" => 57);
+
+            echo "&lt;h4>Student Results&lt;/h4>
+            &lt;table>
+                &lt;tr>
+                    &lt;td>&lt;/td>
+                    &lt;th>Physics&lt;/th>
+                    &lt;th>English&lt;/th>
+                    &lt;th>Maths&lt;/th>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;th>Aarron&lt;/th>
+                    &lt;td>{$aarron["physics"]}%&lt;/td>
+                    &lt;td>{$aarron["english"]}%&lt;/td>
+                    &lt;td>{$aarron["maths"]}%&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;th>Jamie&lt;/th>
+                    &lt;td>{$jamie["physics"]}%&lt;/td>
+                    &lt;td>{$jamie["english"]}%&lt;/td>
+                    &lt;td>{$jamie["maths"]}%&lt;/td>
+                &lt;/tr>
+                &lt;tr>
+                    &lt;th>Harry&lt;/th>
+                    &lt;td>{$harry["physics"]}%&lt;/td>
+                    &lt;td>{$harry["english"]}%&lt;/td>
+                    &lt;td>{$harry["maths"]}%&lt;/td>
+                &lt;/tr>
+            &lt;/table>
+            &lt;br>
+            Physics results for Aarron: {$aarron["physics"]}%&lt;br>
+            English results for Jamie: {$jamie["english"]}%&lt;br>
+            Maths results for Harry: {$harry["maths"]}%"
+            </code>
+        </pre>
+        <p>Output:</p>
         <?php 
-            $aarron = array("physics" => "74%", "english" => "69%", "maths" => "70%");
-            $jamie = array("physics" => "64%", "english" => "79%", "maths" => "69%");
-            $harry = array("physics" => "55%", "english" => "52%", "maths" => "57%");
+            $aarron = array("physics" => 74, "english" => 69, "maths" => 70);
+            $jamie = array("physics" => 64, "english" => 79, "maths" => 69);
+            $harry = array("physics" => 55, "english" => 52, "maths" => 57);
 
             echo "<h4>Student Results</h4>
             <table>
@@ -174,31 +316,31 @@
                 </tr>
                 <tr>
                     <th>Aarron</th>
-                    <td>{$aarron["physics"]}</td>
-                    <td>{$aarron["english"]}</td>
-                    <td>{$aarron["maths"]}</td>
+                    <td>{$aarron["physics"]}%</td>
+                    <td>{$aarron["english"]}%</td>
+                    <td>{$aarron["maths"]}%</td>
                 </tr>
                 <tr>
                     <th>Jamie</th>
-                    <td>{$jamie["physics"]}</td>
-                    <td>{$jamie["english"]}</td>
-                    <td>{$jamie["maths"]}</td>
+                    <td>{$jamie["physics"]}%</td>
+                    <td>{$jamie["english"]}%</td>
+                    <td>{$jamie["maths"]}%</td>
                 </tr>
                 <tr>
                     <th>Harry</th>
-                    <td>{$harry["physics"]}</td>
-                    <td>{$harry["english"]}</td>
-                    <td>{$harry["maths"]}</td>
+                    <td>{$harry["physics"]}%</td>
+                    <td>{$harry["english"]}%</td>
+                    <td>{$harry["maths"]}%</td>
                 </tr>
             </table>
             <br>
-            Physics results for Aarron: {$aarron["physics"]}<br>
-            English results for Jamie: {$jamie["english"]}<br>
-            Maths results for Harry: {$harry["maths"]}
-            "
+            Physics results for Aarron: {$aarron["physics"]}%<br>
+            English results for Jamie: {$jamie["english"]}%<br>
+            Maths results for Harry: {$harry["maths"]}%"
         ?>
     </div>
-
+    <br>
+    <br>
 
 </body>
 </html>
