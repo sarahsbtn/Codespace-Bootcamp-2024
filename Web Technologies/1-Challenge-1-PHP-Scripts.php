@@ -21,7 +21,8 @@
         <img src="csLogo.png" style="float: left;">
         <img src="ecLogo.png" style="float: right; margin-top: 3%;">
         <br>
-        <h1 style="text-align: center;"><b>Codespace Bootcamp</b></h1>
+        <h1 style="text-align: center"><b>Codespace Bootcamp</b></h1>
+        <h6 style="text-align: center">Sarah Beaton - EC1937236</h6>
     </div>
     <br>
     <br>
@@ -30,7 +31,7 @@
             <h1>Web Technologies</h1>
         </div>
         <div class="col-sm-4">
-            <h5 style="text-align: right; width: 95%">Sarah Beaton<br>EC1937236</h5>
+            
         </div>
     </div>
     <br>
@@ -204,7 +205,7 @@
                 $julyAugust = array("low" => "11°C", "high" => "19°C");
                 $januaryFebruary = array("low" => "1°C", "high" => "7°C");
 
-                echo "&lt;h4>Average Temperatures in Edinburgh&lt;/h4>
+                echo "&lt;h5>Average Temperatures in Edinburgh&lt;/h5>
                 &lt;table>
                     &lt;tr>
                         &lt;th>Months&lt;/th>
@@ -229,7 +230,7 @@
             $julyAugust = array("low" => "11°C", "high" => "19°C");
             $januaryFebruary = array("low" => "1°C", "high" => "7°C");
 
-            echo "<h4>Average Temperatures in Edinburgh</h4>
+            echo "<h5>Average Temperatures in Edinburgh</h5>
             <table>
                 <tr>
                     <th>Months</th>
@@ -267,7 +268,7 @@
             $jamie = array("physics" => 64, "english" => 79, "maths" => 69);
             $harry = array("physics" => 55, "english" => 52, "maths" => 57);
 
-            echo "&lt;h4>Student Results&lt;/h4>
+            echo "&lt;h5>Student Results&lt;/h5>
             &lt;table>
                 &lt;tr>
                     &lt;td>&lt;/td>
@@ -306,7 +307,7 @@
             $jamie = array("physics" => 64, "english" => 79, "maths" => 69);
             $harry = array("physics" => 55, "english" => 52, "maths" => 57);
 
-            echo "<h4>Student Results</h4>
+            echo "<h5>Student Results</h5>
             <table>
                 <tr>
                     <td></td>
@@ -341,6 +342,6 @@
     </div>
     <br>
     <br>
-
+    
 </body>
 </html>
