@@ -1,4 +1,4 @@
-# Edinburgh College - Codespace Bootcamp 2024
+# Edinburgh College - Codespace Bootcamp Course 2024
 
-My work and completed challenges for Edinburgh College's Codespace Bootcamp
+My work and completed challenges for Edinburgh College's Codespace Bootcamp Course
 
