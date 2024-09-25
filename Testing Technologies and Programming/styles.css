@@ -3,10 +3,6 @@ body {
     
 }
 
-h1 {
-    padding-left: 10px;
-}
-
 h2 {
     text-decoration: underline;
     border-radius: 18px;
@@ -33,7 +29,7 @@ pre {
     width: 90%;
 }
 
-#q1, #q2, #q3, #q4, #q5, #q6 {
+#q1, #q1-2, #q2, #q2-2, #q3, #q4, #q5, #q5-2, #q6 {
     background-color: #E2DFD2;
     padding: 15px;
     width: 90%;

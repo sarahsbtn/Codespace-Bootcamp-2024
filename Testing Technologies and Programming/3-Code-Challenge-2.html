@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=#, inital-scale=1.0">
+        <title>Testing Technologies and Programming</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        <style> body {
+            font-family: "Outfit", sans-serif;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <img src="csLogo.png" style="float: left;">
+        <img src="ecLogo.png" style="float: right; margin-top: 2%;">
+        <br>
+        <h1 style="text-align: center"><b>Codespace Bootcamp</b></h1>
+        <h6 style="text-align: center">Sarah Beaton - EC1937236</h6>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 style="padding-left: 10px">Testing Technologies and Programming</h1>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <br>
+    <h2>Code Challenge 2</h2>
+    <p id="answers">In this topic, you will improve your coding skills by writing code solutions for the following tasks.</p>
+    <br>
+    <h3>Coding Task 1 - Classes and Objects</h3>
+    <!-- In this task your are required to create a user application.
+        Let's write a user class with the tools we have just acquired. This class will contain the first and  last name of each user and will be able to say hello to anyone who uses our application.
+        Instructions:
+        Write the class User and add the properties.
+        Add the method that says hello.
+        Create the first instance, and call it user1. Use the new keyword to create an object from the class.
+        Set the values for the first and last name to user1.
+
+        firstName = 'John'
+        lastName = 'Doe'
+
+        Get the user first and last name, and print it to the screen.
+        Use the hello() method with the first and last name variables in order to say hello to the user:
+
+        Expected result:
+        hello, John Doe
+
+        Add another object, call it user2, give it a first name of 'Jane' and last name of 'Doe', then say hello to the user.
+
+        Expected result:
+        hello, John Doe
+        hello, Jane Doe -->
+    <div id="answers">
+        <pre>
+            <code>
+                class User1 {
+                    constructor(firstName, lastName) {
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                    }
+    
+                    hello() {
+                        return "Hello, " + this.firstName + " " + this.lastName;
+                    }
+                }
+    
+                const user1 = new User1("John", "Doe");
+                const user2 = new User1("Jane", "Doe");
+    
+                document.getElementById("q1").innerHTML = user1.hello();
+                document.getElementById("q1-2").innerHTML = user2.hello();
+            </code>
+        </pre>
+        <p>Output:</p>
+        <p id="q1"></p>
+        <p id ="q1-2"></p>
+        <script>
+            class User1 {
+                constructor(firstName, lastName) {
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                }
+
+                hello() {
+                    return "Hello, " + this.firstName + " " + this.lastName;
+                }
+            }
+
+            const user1 = new User1("John", "Doe");
+            const user2 = new User1("Jane", "Doe");
+
+            document.getElementById("q1").innerHTML = user1.hello();
+            document.getElementById("q1-2").innerHTML = user2.hello();
+        </script>
+    </div>
+    <br>
+    <h3>Coding Task 2 - Encapsulation</h3>
+    <!-- In this task you will extend the previous one with the help of some guiding topics.
+        Your 'User' class should look like this:
+
+        class User {
+        constructor(firstName, lastName) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+        
+        hello() {
+            return "hello";
+        }  
+        }
+        
+        Get and Set Methods 
+        Add the class constructor.
+        Add the getters and setters methods after the class constructor.
+        Change your hello() method to return 'Hello World!'.
+        Add the following:
+        1. Create an user object called user that will represent the User class.
+        2. Use the setters methods to set the firstName and lastName instance variables of your user object.
+        3. Use getters methods to retrieve the firstName and lastName Strings from the user object and add a blank space in between.
+
+        Your program output should now look like this:
+
+        Hello World!
+        My name is firstName lastSurname -->
+    <div id="answers">
+        <pre>
+            <code>
+                class User2 {  
+                    constructor() {  
+                        this._firstName = "";  
+                        this._lastName = "";  
+                    }  
+        
+                    // Getter   
+                    get firstName() {  
+                        return this._firstName;  
+                    }  
+        
+                    // Setter 
+                    set firstName(firstName) {  
+                        this._firstName = firstName;  
+                    }  
+        
+                    // Getter  
+                    get lastName() {  
+                        return this._lastName;  
+                    }  
+        
+                    // Setter  
+                    set lastName(lastName) {  
+                        this._lastName = lastName;  
+                    }  
+        
+                    hello() {  
+                        return "Hello World!";  
+                    }  
+                }  
+        
+                const user = new User2();
+        
+                // Set method  
+                user.firstName = "John";  
+                user.lastName = "Doe";  
+          
+                const fullName = user.firstName + " " + user.lastName;  
+        
+                document.getElementById("q2").innerHTML = user.hello() + "&lt;br>" + "My name is " + fullName;
+            </code>
+        </pre>
+        <p>Output:</p>
+        <p id="q2"></p>
+        <script>
+            class User2 {  
+            constructor() {  
+                this._firstName = "";  
+                this._lastName = "";  
+            }  
+
+            // Getter   
+            get firstName() {  
+                return this._firstName;  
+            }  
+
+            // Setter 
+            set firstName(firstName) {  
+                this._firstName = firstName;  
+            }  
+
+            // Getter  
+            get lastName() {  
+                return this._lastName;  
+            }  
+
+            // Setter  
+            set lastName(lastName) {  
+                this._lastName = lastName;  
+            }  
+
+            hello() {  
+                return "Hello World!";  
+            }  
+        }  
+
+        const user = new User2();
+
+        // Set method  
+        user.firstName = "John";  
+        user.lastName = "Doe";  
+  
+        const fullName = user.firstName + " " + user.lastName;  
+
+        document.getElementById("q2").innerHTML = user.hello() + "<br>" + "My name is " + fullName;
+            
+        </script>
+    </div>
+    <br>
+    <br>
+    <h3>Coding Task 3 - Inheritance (Subclass and Superclass)</h3>
+    <!-- In this task your are required to create an Admin class, which is a  child class of the User  class:
+        1. Create a  User class:
+        § Add to the class a property with the name of username.
+        § Create a setter method that can set the value of the username.
+
+        2. Create the Admin class that inherits the User class:
+        § Add a method by the name of expressYourRole(), and make it return the string: "Admin".
+        § Add to the Admin class another method, sayHello(), that returns the string "Hello admin, XXX" with the username instead of XXX.
+
+        3. Create an object admin out of the class Admin:
+        § Set its name to "Balthazar" and say hello to the user. -->
+    <div id="answers">
+        <pre>
+            <code>
+                class User3 {
+                    constructor() {
+                        this._username = "";
+                    }
+    
+                    // Getter
+                    get username() {
+                        return this._username;
+                    }
+    
+                    // Setter
+                    set username(username) {
+                        this._username = username;
+                    }
+                }
+    
+                class Admin extends User3 {
+                    constructor(username) {
+                        super(); 
+    
+                        // Setter
+                        this.username = username; 
+                    }
+    
+                    expressYourRole() {
+                        return "Admin";
+                    }
+    
+                    sayhello() {
+                        return "Hello " + this.expressYourRole() + " " + this.username; 
+                    }
+                }
+    
+                const admin = new Admin();
+    
+                // Set method
+                admin.username = "Balthazar";
+    
+                document.getElementById("q3").innerHTML = admin.sayhello(); 
+            </code>
+        </pre>
+        <p>Output:</p>
+        <p id="q3"></p> 
+        <script>
+            class User3 {
+                constructor() {
+                    this._username = "";
+                }
+
+                // Getter
+                get username() {
+                    return this._username;
+                }
+
+                // Setter
+                set username(username) {
+                    this._username = username;
+                }
+            }
+
+            class Admin extends User3 {
+                constructor(username) {
+                    super(); 
+
+                    // Setter
+                    this.username = username; 
+                }
+
+                expressYourRole() {
+                    return "Admin";
+                }
+
+                sayhello() {
+                    return "Hello " + this.expressYourRole() + " " + this.username; 
+                }
+            }
+
+            const admin = new Admin();
+
+            // Set method
+            admin.username = "Balthazar";
+
+            document.getElementById("q3").innerHTML = admin.sayhello(); 
+        </script>       
+    </div>
+    <br>
+    <br>
+    <h3>Coding Task 4 - Polymorphism</h3>
+    <!-- In order to implement the polymorphism principle, you will create a User class that commits the classes that inherit from it to calculate the number of scores that a user has depending on the number of articles that he has authored or edited.
+        On the basis of the User class, we are going to create the Author and Editor classes, and both will calculate the number of scores with the method calcScores(), although the calculated value will differ between the two classes.
+        This is the skeleton for the User class:
+
+        Example:
+        class User {
+        constructor() {
+            this.numberOfArticles = 0;
+        }
+        }
+        1. Add to the User class the methods to set and get the number of articles:
+
+        setNumberOfArticles(int numberOfArticles)
+        getNumberOfArticles() 
+
+        2. Add to the User class a third method: 
+        calcScores(), that performs the scores calculations separately for each class.
+
+        3. Create an Author class that inherits from the User class. 
+        In the Author create a calcScores() method that returns the number of scores from the following calculation: 
+        numberOfArticles * 10 + 20
+
+        4. Create an Editor class that inherits from the User class. 
+        In the Editor create a calcScores() method that returns the number of scores from the following calculation: 
+        numberOfArticles * 6 + 15
+
+        5. Create an object, author, from the Author class, set the number of articles to 8, and print the scores that the author gained.
+
+        6. Create another object, editor, from the Editor class, set the number of articles to 15, and print the scores that the editor gained. -->
+    <div id="answers">
+        <pre>
+            <code>
+                class User4 {
+                    constructor() {
+                        this._numberOfArticles = 0;
+                    }
+        
+                    // Getter
+                    get numberOfArticles() {
+                        return this._numberOfArticles;
+                    }
+        
+                    // Setter
+                    set numberOfArticles(numberOfArticles) {
+                        this._numberOfArticles = numberOfArticles;
+                    }
+        
+                    // Method calcScores
+                    calcScores() {
+                        return 0; 
+                    }
+                }
+        
+                class Author extends User4 {
+                    constructor(numberOfArticles) {
+                        super();
+                        this.numberOfArticles = numberOfArticles;
+                    }
+        
+                    // Method calcScores
+                    calcScores() {
+                        return this.numberOfArticles * 10 + 20; 
+                    }
+                }
+        
+                class Editor extends User4 {
+                    constructor(numberOfArticles) {
+                        super();
+                        this.numberOfArticles = numberOfArticles; 
+                    }
+        
+                    // Method calcScores
+                    calcScores() {
+                        return this.numberOfArticles * 6 + 15;
+                    }
+                }
+        
+                const author = new Author();
+                // Set method
+                author.numberOfArticles = 8;
+                
+                const editor = new Editor(); 
+                // Set method
+                editor.numberOfArticles = 15;
+    
+                document.getElementById("q4").innerHTML = "Author score: " + author.calcScores() + "&lt;br>" + "Editor score: " + editor.calcScores();
+            </code>
+        </pre>
+        <p>Output:</p>
+        <p id="q4"></p> 
+        <script>
+            class User4 {
+                constructor() {
+                    this._numberOfArticles = 0;
+                }
+    
+                // Getter
+                get numberOfArticles() {
+                    return this._numberOfArticles;
+                }
+    
+                // Setter
+                set numberOfArticles(numberOfArticles) {
+                    this._numberOfArticles = numberOfArticles;
+                }
+    
+                // Method calcScores
+                calcScores() {
+                    return 0; 
+                }
+            }
+    
+            class Author extends User4 {
+                constructor(numberOfArticles) {
+                    super();
+                    this.numberOfArticles = numberOfArticles;
+                }
+    
+                // Method calcScores
+                calcScores() {
+                    return this.numberOfArticles * 10 + 20; 
+                }
+            }
+    
+            class Editor extends User4 {
+                constructor(numberOfArticles) {
+                    super();
+                    this.numberOfArticles = numberOfArticles; 
+                }
+    
+                // Method calcScores
+                calcScores() {
+                    return this.numberOfArticles * 6 + 15;
+                }
+            }
+    
+            const author = new Author();
+            // Set method
+            author.numberOfArticles = 8;
+            
+            const editor = new Editor(); 
+            // Set method
+            editor.numberOfArticles = 15;
+
+            document.getElementById("q4").innerHTML = "Author score: " + author.calcScores() + "<br>" + "Editor score: " + editor.calcScores();
+    
+        </script>       
+    </div>
+    <br>
+    <br>
+    <h3>Coding Task 5 - Abstraction</h3>
+    <!-- In this task , we will create an abstract User class and two child classes (Admin and Viewer classes) that inherit from the abstract class.
+        1. Create an abstract class with the name of User: 
+        Add to the class, a property with the name of username. 
+        Add to the class, an abstract method with the name of stateYourRole().
+        Add to the class, the setter and getter methods to set and get the username.
+
+        2. Create an Admin class that inherits the User abstract class: 
+        Add to the class a method stateYourRole() and let it return the string "admin".
+
+        3. Create another class, Viewer that inherits the User abstract class: 
+        Add to the class a method stateYourRole() and let it return the string "viewer".
+
+        4. Create an object, admin, from the Admin class, set the username to "Balthazar", and make it return the string "admin".
+
+        5. Create an object, viewer, from the Viewer class, set the username to "Melchior", and make it return the string "viewer". -->
+    <div id="answers">
+        <pre>
+            <code>
+                class User5 {
+                    constructor() {
+                        this._username = "";
+                    }
+    
+                    // Getter
+                    get username() {
+                        return this._username;
+                    }
+    
+                    // Setter
+                    set username(username) {
+                        this._username = username;
+                    }
+    
+                    // Method stateYourRole
+                    stateYourRole() {
+                    }
+                }
+    
+                class Admin2 extends User5 {
+                    constructor(username) {
+                        super(); 
+    
+                        // Setter
+                        this.username = username; 
+                    }
+    
+                    // Method stateYourRole
+                    stateYourRole() {
+                        return "admin";
+                    }
+                }
+    
+                class Viewer extends User5 {
+                    constructor(username) {
+                        super(); 
+    
+                        // Setter
+                        this.username = username; 
+                    }
+    
+                    // Method stateYourRole
+                    stateYourRole() {
+                        return "viewer";
+                    }
+                }
+    
+                const admin2 = new Admin2;
+                // Set method
+                admin2.username = "Balthazar";
+    
+                const viewer = new Viewer;
+                // Set method
+                viewer.username = "Melchior";
+                
+                document.getElementById("q5").innerHTML = admin2.username + " - " + admin2.stateYourRole();
+                document.getElementById("q5-2").innerHTML = viewer.username + " - " + viewer.stateYourRole();
+            </code>
+        </pre>
+        <p>Output:</p>
+        <p id="q5"></p> 
+        <p id="q5-2"></p>
+        <script>
+            class User5 {
+                constructor() {
+                    this._username = "";
+                }
+
+                // Getter
+                get username() {
+                    return this._username;
+                }
+
+                // Setter
+                set username(username) {
+                    this._username = username;
+                }
+
+                // Method stateYourRole
+                stateYourRole() {
+                }
+            }
+
+            class Admin2 extends User5 {
+                constructor(username) {
+                    super(); 
+
+                    //Setter
+                    this.username = username; 
+                }
+
+                // Method stateYourRole
+                stateYourRole() {
+                    return "admin";
+                }
+            }
+
+            class Viewer extends User5 {
+                constructor(username) {
+                    super(); 
+
+                    // Setter
+                    this.username = username; 
+                }
+
+                // Method stateYourRole
+                stateYourRole() {
+                    return "viewer";
+                }
+            }
+
+            const admin2 = new Admin2;
+            // Set method
+            admin2.username = "Balthazar";
+
+            const viewer = new Viewer;
+            // Set method
+            viewer.username = "Melchior";
+            
+            document.getElementById("q5").innerHTML = admin2.username + " - " + admin2.stateYourRole();
+            document.getElementById("q5-2").innerHTML = viewer.username + " - " + viewer.stateYourRole();  
+        </script>       
+    </div>
+</body>
+</html>
