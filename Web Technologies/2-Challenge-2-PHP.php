@@ -33,7 +33,7 @@
         <div class="col-sm-4"></div>
     </div>
     <br>
-    <h2>Challenge 2 - PHP</h2>
+    <h2>Challenge 2 - PHP TEST</h2>
     <p id="answers">In the following challenges, you will improve your scripting skills by writing solutions for the tasks.</p>
     <br>
     <h3>PHP Function</h3>
