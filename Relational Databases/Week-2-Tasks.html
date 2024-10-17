@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=#, inital-scale=1.0">
+        <title>Testing Technologies and Programming</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+        <style> body {
+            font-family: "Outfit", sans-serif;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="container">
+        <img src="csLogo.png" style="float: left;">
+        <img src="ecLogo.png" style="float: right; margin-top: 2%;">
+        <br>
+        <h1 style="text-align: center"><b>Codespace Bootcamp</b></h1>
+        <h6 style="text-align: center">Sarah Beaton - EC1937236</h6>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-8">
+            <h1 style="padding-left: 10px">Database Technologies</h1>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <br>
+    <h2>Week 2 - Tasks</h2>
+    <ul>
+        <h4><li>Complete the whole College1 database according to the Data dictionary provided</li></h4>
+            <pre><br>
+                -- phpMyAdmin SQL Dump
+                -- version 5.2.1
+                -- https://www.phpmyadmin.net/
+                --
+                -- Host: 127.0.0.1
+                -- Generation Time: Sep 20, 2024 at 04:55 PM
+                -- Server version: 10.4.32-MariaDB
+                -- PHP Version: 8.2.12
+
+                SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+                START TRANSACTION;
+                SET time_zone = "+00:00";
+
+
+                /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+                /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+                /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+                /*!40101 SET NAMES utf8mb4 */;
+
+                --
+                -- Database: `college`
+                --
+
+                -- --------------------------------------------------------
+
+                --
+                -- Table structure for table `department`
+                --
+
+                CREATE TABLE `department` (
+                `departmentID` varchar(50) NOT NULL,
+                `departmentName` varchar(100) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+                -- --------------------------------------------------------
+
+                --
+                -- Table structure for table `enrolment`
+                --
+
+                CREATE TABLE `enrolment` (
+                `enrolmentID` varchar(50) NOT NULL,
+                `studentID` varchar(50) NOT NULL,
+                `moduleID` varchar(50) NOT NULL,
+                `enrolmentDate` date DEFAULT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+                --
+                -- Dumping data for table `enrolment`
+                --
+
+                INSERT INTO `enrolment` (`enrolmentID`, `studentID`, `moduleID`, `enrolmentDate`) VALUES
+                ('1', 'EC123', 'EC101', NULL),
+                ('2', 'EC123', 'EC201', NULL),
+                ('3', 'EC234', 'EC101', NULL),
+                ('4', 'EC345', 'EC301', NULL),
+                ('5', 'EC456', 'EC401', NULL),
+                ('6', 'EC456', 'EC201', NULL);
+
+                -- --------------------------------------------------------
+
+                --
+                -- Table structure for table `lecturer`
+                --
+
+                CREATE TABLE `lecturer` (
+                `lecturerID` varchar(50) NOT NULL,
+                `lecturerFullName` varchar(100) NOT NULL,
+                `lecturerEmail` varchar(100) NOT NULL,
+                `departmentID` varchar(50) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+                -- --------------------------------------------------------
+
+                --
+                -- Table structure for table `lecturer_module`
+                --
+
+                CREATE TABLE `lecturer_module` (
+                `lecturer_module_ID` varchar(50) NOT NULL,
+                `moduleID` varchar(50) NOT NULL,
+                `lecturerID` varchar(50) NOT NULL,
+                `year_of_delivery` int(11) NOT NULL,
+                `semester` int(11) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+                -- --------------------------------------------------------
+
+                --
+                -- Table structure for table `module`
+                --
+
+                CREATE TABLE `module` (
+                `moduleID` varchar(50) NOT NULL,
+                `moduleName` varchar(100) NOT NULL,
+                `credit` int(11) NOT NULL,
+                `moduleDescription` varchar(200) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+                --
+                -- Dumping data for table `module`
+                --
+
+                INSERT INTO `module` (`moduleID`, `moduleName`, `credit`, `moduleDescription`) VALUES
+                ('EC101', 'Programming Fundamentals', 6, ''),
+                ('EC201', 'Relational Databases', 6, ''),
+                ('EC301', 'Data Structures and Algorithms', 6, ''),
+                ('EC401', 'Artificial Intelligence', 6, '');
+
+                -- --------------------------------------------------------
+
+                --
+                -- Table structure for table `student`
+                --
+
+                CREATE TABLE `student` (
+                `studentID` varchar(50) NOT NULL,
+                `fullName` varchar(100) NOT NULL,
+                `email` varchar(50) NOT NULL
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+                --
+                -- Dumping data for table `student`
+                --
+
+                INSERT INTO `student` (`studentID`, `fullName`, `email`) VALUES
+                ('EC123', 'Fred Flintstone', 'fflintstone@college.ac.uk'),
+                ('EC234', 'Barney Rubble', 'brubble@college.ac.uk'),
+                ('EC345', 'Wilma Flintstone', 'wflintstone@college.ac.uk'),
+                ('EC456', 'Betty Rubble', 'berubble@college.ac.uk');
+
+                --
+                -- Indexes for dumped tables
+                --
+
+                --
+                -- Indexes for table `department`
+                --
+                ALTER TABLE `department`
+                ADD PRIMARY KEY (`departmentID`);
+
+                --
+                -- Indexes for table `enrolment`
+                --
+                ALTER TABLE `enrolment`
+                ADD PRIMARY KEY (`enrolmentID`);
+
+                --
+                -- Indexes for table `lecturer`
+                --
+                ALTER TABLE `lecturer`
+                ADD PRIMARY KEY (`lecturerID`);
+
+                --
+                -- Indexes for table `lecturer_module`
+                --
+                ALTER TABLE `lecturer_module`
+                ADD PRIMARY KEY (`lecturer_module_ID`);
+
+                --
+                -- Indexes for table `module`
+                --
+                ALTER TABLE `module`
+                ADD PRIMARY KEY (`moduleID`);
+
+                --
+                -- Indexes for table `student`
+                --
+                ALTER TABLE `student`
+                ADD PRIMARY KEY (`studentID`);
+                COMMIT;
+
+                /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+                /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+                /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+            </pre>
+        <br>
+        <h4><li>Use the noun technique to extract the names of entities in the FBN case study</li></h4>
+            <ul>
+                <li>store</li>
+                <li>orders</li>
+                <li>employees</li>
+                <li>customers</li>
+                <li>items</li>
+                <li>payment</li>
+            </ul>
+        <br>
+        <h4><li>First cut attempt at the ERD (visio or draw.io) to do the diagram</li></h4>
+            <div class="image-container">
+                <img src="images/ERD-FastBurgersNow.jpg" style="border: 2px solid black">
+            </div>
+        <br><h4><li>Add the attributes you think belong or are explicitly mentioned in the FBN case study</li></h4>
+            <div class="image-container">
+                <img src="images/Data-Dictionary-FastBurgersNow.jpeg" style="border: 2px solid black; width: 70%">
+            </div>
+        <br>
+    </ul>
+    <br>
+</body>
+</html>
