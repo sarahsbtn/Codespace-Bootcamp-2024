@@ -42,11 +42,11 @@ submitButton.addEventListener('click', () => {
         // Use elseif statement to hint to the player if the number is higher or lower
     } else {
 
-        // If the playerGuess is less than the randomNumber...
+        // If the randomNumber is more than the playerGuess...
         if (playerGuess < randomNumber) {
             resultText.textContent = "Higher! Try again";
 
-            // Else the playerGuess must be higher than the randomNumber
+            // Else the randomNumber must be lower than the playerGuess
         } else {
             resultText.textContent = "Lower! Try again";
         }
