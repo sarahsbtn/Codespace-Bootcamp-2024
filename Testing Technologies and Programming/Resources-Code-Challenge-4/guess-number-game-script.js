@@ -12,7 +12,7 @@ const maxAttempts = 3;
 // Select and assign elements from DOM
 const submitButton = document.querySelector('button');
 const playerGuessInput = document.getElementById('playerGuess');
-let resultText = document.getElementById('resultText');
+let gameText = document.getElementById('gameText');
 
 // Add event listener to submit button
 submitButton.addEventListener('click', () => {
@@ -22,7 +22,7 @@ submitButton.addEventListener('click', () => {
 
     // Check that the number is between 1 and 10, if not return prompt for valid range, otherwise continue
     if (playerGuess < 1 || playerGuess > 10) {
-        resultText.textContent = "Please enter a number between 1 and 10";
+        gameText.textContent = "Please enter a number between 1 and 10";
         return;
     }
 
@@ -32,14 +32,14 @@ submitButton.addEventListener('click', () => {
 
     // Check if the player's guess is correct
     if (playerGuess === randomNumber) {
-        resultText.textContent = "Congratulations, " + randomNumber + " is right!";
+        gameText.textContent = "Congratulations, " + randomNumber + " is right!";
 
         // Reset the game for new round, taking the number of attempts back to 0
         resetGame();
 
         // If the player has reached the maximum number of attempts (3)
     } else if (attempts >= maxAttempts) {
-        resultText.textContent = "Sorry, you've used all attempts! The number was " + randomNumber;
+        gameText.textContent = "Sorry, you've used all attempts! The number was " + randomNumber;
         resetGame();
 
 
@@ -48,11 +48,11 @@ submitButton.addEventListener('click', () => {
 
         // If the randomNumber is more than the playerGuess...
         if (playerGuess < randomNumber) {
-            resultText.textContent = "Higher! Try again";
+            gameText.textContent = "Higher! Try again";
 
             // Else the randomNumber must be lower than the playerGuess
         } else {
-            resultText.textContent = "Lower! Try again";
+            gameText.textContent = "Lower! Try again";
         }
     }
 });
