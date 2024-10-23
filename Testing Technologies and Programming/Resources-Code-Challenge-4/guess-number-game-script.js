@@ -1,7 +1,11 @@
 // Generate a random number between 1 and 10
-let randomNumber = Math.floor(Math.random() * 10) + 1;
+let randomNumber = Math.floor(Math.random() * 10) + 1; /* Math.random to generate number between 0 and 1
+                                                          * that by 10 to adjust range to between 0 and just under 10
+                                                          Math.floor rounds the random number to nearest whole number
+                                                          + 1 to adjust range to between 1 and 10
+                                                        */
 
-// Set maximum number of attempts allowed for each game session
+// Set maximum number of attempts allowed for each game session (3)
 let attempts = 0;
 const maxAttempts = 3;
 
