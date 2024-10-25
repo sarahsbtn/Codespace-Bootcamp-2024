@@ -1,0 +1,140 @@
+body {
+  padding: 35px;
+}
+
+h2 {
+  text-decoration: underline;
+  border-radius: 18px;
+  background-color: rgba(245, 190, 59, 0.7);
+  padding: 10px;
+}
+
+h3 {
+  color: white;
+}
+
+p {
+  padding-left: 25px;
+}
+
+.calculator-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  width: 300px;
+  height: 500px;
+  background-color: #232522;
+  text-align: center;
+  display: grid;
+  border: solid black 4px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  border-radius: 5%;
+  padding: 5;
+}
+
+button {
+  border-radius: 50%;
+  font-size: 1.5em;
+  margin: 5px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all300ms ease;
+}
+
+button:hover {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.number-button {
+  background-color: #9ea39e;
+}
+
+.operator {
+  background-color: #f5be3b;
+}
+
+#percentage,
+#posneg {
+  background-color: #ffffff;
+}
+
+#equal-button {
+  background-color: #66ff99;
+}
+
+#clear-button {
+  background-color: #f9a5a4;
+}
+
+.display-screen {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 5;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: auto;
+  align-items: center;
+  padding-left: 1rem;
+  font-size: 2rem;
+  border-bottom: solid black 2px;
+  background-color: black;
+  border-radius: 5%;
+  color: white;
+  z-index: 2;
+}
+
+#undo {
+  border-radius: 0px;
+  height: 90%;
+  z-index: 1;
+  font-size: 1rem;
+}
+
+#zero {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+.chaos-holder {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+#chaos {
+  border-radius: 0px;
+  font-size: 1.5em;
+  box-shadow: none;
+  transition: all300ms ease;
+}
+
+.spinner {
+  position: absolute;
+  top: 50%; /* Center it vertically */
+  left: 0; /* Start at the left end */
+  transform: translateY(-50%); /* Adjust for perfect vertical centering */
+}
+
+@keyframes bounceAcross {
+  0% {
+    left: 0; /* Start on the left side */
+  }
+  50% {
+    left: 100%; /* Move to the right end of the page */
+    transform: translateX(-100%) translateY(-50%); /* Keep the div inside the viewport */
+  }
+  100% {
+    left: 0; /* Move back to the left side */
+    transform: translateY(-50%);
+  }
+}
+
+/* Apply the animation */
+.spinner {
+  animation: bounceAcross 7s ease-in-out infinite;
+}
