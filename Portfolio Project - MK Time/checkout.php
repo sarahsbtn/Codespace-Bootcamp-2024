@@ -48,6 +48,15 @@ if (isset($_POST['total']) && ($_POST['total'] > 0) && !empty($_SESSION['cart'])
 mysqli_close($link);
 ?>
 
+<div class="image-container" style="padding: 0px">
+    <picture>
+        <img src="images/shoppingcartbackground.jpg" class="img-fluid" alt="backgroundwatch">
+    </picture>
+    <div class="bottom-left-dark-2">
+        <h2 style="font-family: libre-baskerville-regular">THANKS FOR YOUR ORDER!</h2>
+    </div>
+</div>
+
 <div class="container-fluid" id="checkout">
     <div class="row justify-content-center">
         <div class="col-sm-8 col-md-6 col-lg-4">

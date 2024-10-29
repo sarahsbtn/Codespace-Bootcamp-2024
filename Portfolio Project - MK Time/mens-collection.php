@@ -29,7 +29,7 @@ $pageTitle = 'Mens Collection';
         echo '
     <div id="notification" class="alert alert-secondary notification-box" role="alert">
         <p>' . $_SESSION['message'] . '</p>
-        <a href="cart.php">View Your Cart</a>
+        <a href="cart.php">View your cart</a>
     </div>';
 
         unset($_SESSION['message']); // Clear the message after displaying it
