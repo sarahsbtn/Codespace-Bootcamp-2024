@@ -24,7 +24,7 @@ $pageTitle = 'Mens Collection';
 
 
     <?php
-    // Display the added to cart message if it exists
+    // Display added to cart message
     if (isset($_SESSION['message'])) {
         echo '
     <div id="notification" class="alert alert-secondary notification-box" role="alert">
@@ -32,10 +32,10 @@ $pageTitle = 'Mens Collection';
         <a href="cart.php">View your cart</a>
     </div>';
 
-        unset($_SESSION['message']); // Clear the message after displaying it
+        unset($_SESSION['message']); // Clear message
     }
 
-    # Open database connection.
+    # Open database connection
     require('connect_db.php');
 
     # Retrieve items from 'products' database table, ids 9 to 16 for him
