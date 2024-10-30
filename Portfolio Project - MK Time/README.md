@@ -42,7 +42,7 @@ Create a small-scale eCommerce web application that leverages a robust database 
 *	Create a responsive and mobile-friendly user interface for seamless access on various devices.     
 <br/>
 
-Technology Stack:
+### Technology Stack
 *	Frontend: Bootstrap
 *	Backend: PHP
 *	Database: MySQL
@@ -53,5 +53,16 @@ Testing:
 *	Conduct thorough testing of the application's functionality, security, and performance.
 <br/>
 
+### Home page
 ><img src="https://github.com/sarahsbtn/readMeResources/blob/main/1-Home.png">
+<br/>
+
+### Product page 
+><img src="https://github.com/sarahsbtn/readMeResources/blob/main/4-Product-Page.png">
+<br/>
+
+### User Account page 
+><img src="https://github.com/sarahsbtn/readMeResources/blob/main/7-Your-Account-Logged-in.png">
+<br/>
+
   
