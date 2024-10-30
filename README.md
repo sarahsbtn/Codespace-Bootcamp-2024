@@ -1,8 +1,8 @@
 # Edinburgh College - Codespace Bootcamp Course 2024
 
-Edinburgh College's CodeSpace Bootcamp, in partnership with 2i Testing, offers a flexible and accessible bootcamp course that requires no prior computing degree, focusing instead on skill development and career readiness.
+Edinburgh College's Codespace Bootcamp, in partnership with the company 2i Testing, offers a flexible and accessible bootcamp course that requires no prior computing degree, focusing instead on skill development and career readiness.
 
-Over a condensed 7-week period, I have engaged in a project-driven curriculum, building a database-driven web application while learning key technologies, including:
+Over a condensed 7-week period, I have engaged in a project-driven curriculum (individual and in teams), building a database-driven web application while learning key technologies, including:
 * HTML
 * CSS
 * JavaScript
