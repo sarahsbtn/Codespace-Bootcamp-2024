@@ -72,7 +72,7 @@ include 'includes/header.php';
                         </h6>
                         <p style="display: inline;">Order by 3 PM for next-day delivery - </p>
                         <span id="countdown" style="font-weight: bold; display: inline;"></span><br><br>
-                        <a href="#" class="btn btn-light" style="font-size: 1em"><b>ADD TO CART</b></a>
+                        <a href="added.php?id=<?= $row['item_id'] ?>" class="btn btn-light" style="font-size: 1em"><b>ADD TO CART</b></a>
                     </div>
                 </div>
             </div>

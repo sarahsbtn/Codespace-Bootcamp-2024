@@ -63,16 +63,7 @@ if ($isLoggedIn) {
         }
 
         mysqli_close($link);
-    } else {
-
-        // If cart is empty show message - 
-        $cartItems = '<tr><td colspan="5" style="text-align: center;">Your cart is currently empty</td></tr>';
-    }
-} else {
-
-    // If user is not logged in show message - 
-    $cartItems = '<tr><td colspan="5" style="text-align: center;">Please log in to view your cart</td></tr>';
-}
+    } }
 ?>
 
 <div class="image-container" style="padding: 0px">
@@ -96,11 +87,11 @@ if ($isLoggedIn) {
                     </div>
                 <?php elseif (!isset($_SESSION['user_id'])): ?>
                     <div class="alert alert-secondary" style="text-align: center;">
-                        Please log in to view your cart.
+                        Please log in to view your cart
                     </div>
                 <?php elseif (empty($_SESSION['cart'])): ?>
                     <div class="alert alert-secondary" style="text-align: center;">
-                        Your cart is currently empty.
+                        Your cart is currently empty
                     </div>
                 <?php else: ?>
                     <h2 class="text-center" style="font-family: libre-baskerville-regular">SHOPPING CART</h2>

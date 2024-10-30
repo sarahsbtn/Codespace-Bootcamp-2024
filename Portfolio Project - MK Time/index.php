@@ -1,5 +1,6 @@
 <?php
 include 'includes/header.php';
+$pageTitle = 'Home';
 ?>
 <div>
     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel" data-interval="500"

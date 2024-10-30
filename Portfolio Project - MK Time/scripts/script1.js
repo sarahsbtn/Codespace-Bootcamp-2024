@@ -1,31 +1,68 @@
-// Script for search box underline to remain when box open
-document.addEventListener("DOMContentLoaded", function() {
-    const searchDropdown = document.getElementById('searchDropdown');
-    if (searchDropdown) {
-        function toggleSearchActive() {
-            searchDropdown.classList.toggle('active');
-        }
-    } else {
-        console.warn('Search dropdown element not found. Search script will not run.');
+// Script for promo messages 
+function Common() {
+    let self = this;
+    this.promoBar =
+        {
+            promoItems: null,
+            currentItem: 0,
+            numberOfItems: 0,
+        };
+		
+    this.initialisePromo = function () {
+        /* Get all items in promo bar */
+        let promoItems = $("#promo > div");
+        /* Set values */
+        this.promoBar.promoItems = promoItems;
+        this.promoBar.numberOfItems = promoItems.length;
+        /* Initiate promo loop to show next item */
+        this.startDelay();
     }
+        this.startDelay = function () {
+            /* Wait 4 seconds then show the next message */
+            setTimeout(function () {
+                self.showNextPromoItem()
+            }, 3000);
+    }
+    this.showNextPromoItem = function () {
+        /* Fade out the current item */
+        $(self.promoBar.promoItems).fadeOut("slow").promise().done(function () {
+            /* Increment current promo item counter */
+            if (self.promoBar.currentItem >= (self.promoBar.numberOfItems - 1)) {
+                /* Reset counter to zero */
+                self.promoBar.currentItem = 0;
+            } else {
+                /* Increase counter by 1 */
+                self.promoBar.currentItem++;
+            }
+            /* Fade in the next item */
+            $(self.promoBar.promoItems).eq(self.promoBar.currentItem).fadeIn("slow", function () {
+                /* Delay before showing next item */
+                self.startDelay();
+            });
+        });
+    }
+}
+$(document).ready(function () {
+    app.common = new Common();
+    app.common.initialisePromo();
 });
 
 // Script for product page - countdown timer for next day delivery 
 document.addEventListener("DOMContentLoaded", function() {
     const countdownElement = document.getElementById('countdown');
     if (countdownElement) {
-        // Set the delivery deadline to today 3 PM
+        // Set delivery deadline to today 3 PM
         const deliveryDeadline = new Date();
         deliveryDeadline.setHours(15, 0, 0, 0);
 
-        // Check if the current time is past the deadline
+        // Check if current time is past the deadline
         const now = new Date();
         if (now.getTime() > deliveryDeadline.getTime()) {
-            // If so, move the deadline to the next day at 3 PM
+            // If so, move deadline to the next day at 3 PM
             deliveryDeadline.setDate(deliveryDeadline.getDate() + 1);
         }
 
-        // Function to update the countdown display
+        // Function to update countdown display
         const updateCountdown = () => {
             const now = new Date();
             const timeRemaining = deliveryDeadline - now; // Calculate time remaining
@@ -35,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-            // Update the countdown display based on remaining time
+            // Update countdown display based on remaining time
             if (timeRemaining > 0) {
                 countdownElement.innerHTML = `Order within ${hours}h ${minutes}m ${seconds}s for next-day delivery!`;
             } else {
@@ -43,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         };
 
-        // Set an interval to update the countdown every second
+        // Set interval to updates countdown every second
         setInterval(updateCountdown, 1000);
     } else {
         console.warn('Countdown element not found. Countdown script will not run.');
@@ -54,20 +91,20 @@ document.addEventListener("DOMContentLoaded", function() {
 document.addEventListener("DOMContentLoaded", function() {
     var notification = document.getElementById('notification');
 
-    // Check if the notification exists and is not empty
+    // Check if notification exists and is not empty
     if (notification && notification.innerHTML.trim() !== '') {
-        // Show the notification
-        notification.style.display = 'block'; // Make it visible
+        // Show notification
+        notification.style.display = 'block'; 
         
         // Wait for 3 seconds before starting to fade
         setTimeout(function() {
-            notification.style.opacity = '0'; // Start fading out
+            notification.style.opacity = '0'; 
             
-            // Wait for the fade out transition to complete before hiding it
+            // Wait for fade out transition to complete before hiding it
             setTimeout(function() {
-                notification.style.visibility = 'hidden'; // Hide the box
-                notification.style.display = 'none'; // Optional: Remove from layout
-            }, 1000); // Match this to the CSS transition duration
+                notification.style.visibility = 'hidden'; 
+                notification.style.display = 'none';
+            }, 1000); 
         }, 3000); // Keep visible for 3 seconds
     }
 });

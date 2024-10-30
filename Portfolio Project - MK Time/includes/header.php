@@ -50,8 +50,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <div class="collapse navbar-collapse flex-grow-0" id="collapsibleNavbar">
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown dropstart" id="searchDropdown">
-                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown"
-                                    onclick="toggleSearchActive()">
+                                <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
                                     <i class="bi-search"></i>
                                 </a>
                                 <ul class="dropdown-menu" id="searchbar">

@@ -71,7 +71,6 @@ $pageTitle = 'Mens Collection';
      # Close database connection
      mysqli_close($link);
      ?>
-    ?>
 
     <div class="hover-zoom-2" style="position:relative">
         <picture>
