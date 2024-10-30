@@ -51,3 +51,7 @@ Technology Stack:
 Testing:
 * Implement unit testing for critical components.
 *	Conduct thorough testing of the application's functionality, security, and performance.
+<br/>
+
+><img src="https://github.com/sarahsbtn/readMeResources/blob/main/1-Home.png">
+  
