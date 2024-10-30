@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Bootstrap CSS, Icons, Fonts -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+    <title>Shopping List</title>
+  </head>
+  <body>
+    <div class="container">
+      <img src="csLogo.png" style="float: left" />
+      <img src="ecLogo.png" style="float: right; margin-top: 2%" />
+      <br />
+      <h1 style="text-align: center"><b>Codespace Bootcamp</b></h1>
+      <h5 data-cy="page-title" style="text-align: center">
+        Lewis, Narcis and Sarah
+      </h5>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-sm-8">
+        <h1 style="padding-left: 10px">Testing Technologies and Programming</h1>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <br />
+    <h2
+      style="
+        text-decoration: underline;
+        border-radius: 18px;
+        background-color: rgba(245, 190, 59, 0.7);
+        padding: 10px;
+      "
+    >
+      Code Challenge 5 - Shopping List
+    </h2>
+    <p style="margin-left: 15px">
+      In this task you and your team are required to build a basic shopping list
+      app.
+    </p>
+    <br />
+
+    <div class="row justify-content-center">
+      <div class="col-sm-8 col-md-8 col-lg-8">
+        <div
+          data-cy="shopping-container"
+          class="container-fluid"
+          id="shopping-list-box"
+        >
+          <div class="row justify-content-center">
+            <div class="col-l-12">
+              <h2 style="font-family: 'Indie Flower', cursive">
+                <b>Shopping List <i class="bi bi-basket"></i></b>
+              </h2>
+              <hr />
+              <div class="todo-section">
+                <label for="todo-insert" style="margin-right: 10px">
+                  Input an item:
+                  <input
+                    data-cy="input-box"
+                    type="text"
+                    id="user-item"
+                    placeholder="What do you need?"
+                  />
+                </label>
+                <button
+                  data-cy="add-to-list"
+                  type="button"
+                  id="add-to-list"
+                  class="btn btn-success"
+                >
+                  Add to List
+                </button>
+              </div>
+              <div
+                class="items"
+                style="font-family: 'Indie Flower', cursive"
+              ></div>
+              <br /><br />
+              <div class="text-end">
+                <button
+                  data-cy="clear-list"
+                  type="button"
+                  id="clear-full-list"
+                  class="btn btn-danger"
+                >
+                  Clear my List
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+
+  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"
+  ></script>
+</html>
